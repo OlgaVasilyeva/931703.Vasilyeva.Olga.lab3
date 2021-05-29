@@ -1,0 +1,31 @@
+﻿@model Backend3.Models.NumberVievModel
+@{
+    ViewBag.Title = "Hello Counter";
+}
+
+<h2>QuizResults</h2>
+
+<p><strong>Correct answers:</strong> @Model.NumberCountRight/@Model.NumberCount</p>
+<p>
+    <ol>
+
+        @for (var i = 0; i < Model.Actions.Count; i++)
+        {
+            var g = ViewBag.Prover;
+            
+            @if (g[i].Bul == 0)
+            {
+                <li class="text-danger">@Model.Actions[i].First</li>
+            }
+            @if (g[i].Bul == 1)
+            {
+                <li>@Model.Actions[i].First</li>
+            }
+            
+            @*@Model.Actions[0]*@
+
+
+        }
+        
+    </ol>
+</p>
